@@ -19,8 +19,4 @@ The most features given by the adafruit sample exist were transferred to this ja
 - Documentation of new and existing features
 
 
-### Features
-
-
-
 [adafruit]:https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/blob/master/Adafruit_CharLCDPlate/Adafruit_CharLCDPlate.py
