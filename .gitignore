@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+.gradle
+*.iml
+out
+build
+source_lcd.py
