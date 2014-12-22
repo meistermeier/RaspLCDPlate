@@ -19,6 +19,9 @@ The most features given by the adafruit sample exist were transferred to this ja
 - Create more samples (and physically test all functions)
 - Documentation of new and existing features
 
+#### How to execute the sample
+1. Mount the lcd plate to your pi.
+2. Fire up the code by enter `./gradlew run` in the project root directory.
 
 [adafruit-git]:https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/blob/master/Adafruit_CharLCDPlate/Adafruit_CharLCDPlate.py
 [adafruit-plate]:http://www.adafruit.com/product/1109
