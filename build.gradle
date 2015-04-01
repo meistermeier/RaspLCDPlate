@@ -4,7 +4,7 @@ apply plugin:'application'
 sourceCompatibility = 1.8
 version = '1.0'
 
-mainClassName = "com.meistermeier.rasplcdplate.LcdDemo"
+mainClassName = "com.meistermeier.lcd.LcdDemo"
 
 repositories {
     mavenCentral()

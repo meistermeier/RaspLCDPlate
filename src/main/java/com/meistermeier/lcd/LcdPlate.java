@@ -1,4 +1,4 @@
-package com.meistermeier.rasplcdplate;
+package com.meistermeier.lcd;
 
 import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CDevice;
@@ -16,17 +16,6 @@ public class LcdPlate {
     public static final int BUTTON_DOWN = 2;
     public static final int BUTTON_UP = 3;
     public static final int BUTTON_LEFT = 4;
-
-    // LED colors
-    public static final int BACKGROUND_OFF = 0x00;
-    public static final int BACKGROUND_RED = 0x01;
-    public static final int BACKGROUND_GREEN = 0x02;
-    public static final int BACKGROUND_BLUE = 0x04;
-    public static final int BACKGROUND_YELLOW = BACKGROUND_RED + BACKGROUND_GREEN;
-    public static final int BACKGROUND_TEAL = BACKGROUND_GREEN + BACKGROUND_BLUE;
-    public static final int BACKGROUND_VIOLET = BACKGROUND_RED + BACKGROUND_BLUE;
-    public static final int BACKGROUND_WHITE = BACKGROUND_RED + BACKGROUND_GREEN + BACKGROUND_BLUE;
-    public static final int BACKGROUND_ON = BACKGROUND_RED + BACKGROUND_GREEN + BACKGROUND_BLUE;
 
     // Port expander registers
     private static final int MCP23017_IOCON_BANK0 = 0x0A;// IOCON when Bank 0 active

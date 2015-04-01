@@ -1,24 +1,28 @@
-package com.meistermeier.rasplcdplate;
+package com.meistermeier.lcd;
+
+
+import static com.meistermeier.lcd.LcdBackgroundColor.*;
+
 
 public class LcdDemo {
 
     public static void main(String[] args) throws Exception {
         LcdPlate lcd = new LcdPlate(1, 0x20, 2, 16);
-        lcd.backlight(LcdPlate.BACKGROUND_WHITE);
+        lcd.backlight(LcdBackgroundColor.WHITE.getColorValue());
         lcd.message("Hello World!");
         Thread.sleep(500);
         lcd.clear();
-        lcd.backlight(LcdPlate.BACKGROUND_YELLOW);
+        lcd.backlight(YELLOW.getColorValue());
         Thread.sleep(500);
         lcd.clear();
-        lcd.backlight(LcdPlate.BACKGROUND_GREEN);
+        lcd.backlight(GREEN.getColorValue());
         Thread.sleep(1000);
         lcd.clear();
-        lcd.backlight(LcdPlate.BACKGROUND_RED);
+        lcd.backlight(RED.getColorValue());
         lcd.message("Two line\ntext...");
         Thread.sleep(2000);
         lcd.clear();
-        lcd.backlight(LcdPlate.BACKGROUND_WHITE);
+        lcd.backlight(WHITE.getColorValue());
         lcd.message("Try buttons");
 
         long countdownTimestamp = System.currentTimeMillis();
@@ -47,7 +51,7 @@ public class LcdDemo {
                 lcd.message("select");
                 if (System.currentTimeMillis() - countdownTimestamp > 2000) {
                     lcd.clear();
-                    lcd.backlight(LcdPlate.BACKGROUND_OFF);
+                    lcd.backlight(OFF.getColorValue());
                     lcd.stop();
                     System.exit(0);
                 }
