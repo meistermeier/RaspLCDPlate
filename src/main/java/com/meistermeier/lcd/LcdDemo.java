@@ -29,11 +29,11 @@ public class LcdDemo {
         while (true) {
             // you could also use LcdPlate#buttons() to retrieve a bitmask
             // this will allow simultaneous pressing
-            boolean rightPressed = lcd.buttonPressed(LcdPlate.BUTTON_RIGHT) == 1;
-            boolean leftPressed = lcd.buttonPressed(LcdPlate.BUTTON_LEFT) == 1;
-            boolean upPressed = lcd.buttonPressed(LcdPlate.BUTTON_UP) == 1;
-            boolean downPressed = lcd.buttonPressed(LcdPlate.BUTTON_DOWN) == 1;
-            boolean selectPressed = lcd.buttonPressed(LcdPlate.BUTTON_SELECT) == 1;
+            boolean rightPressed = lcd.buttonPressed(Button.RIGHT);
+            boolean leftPressed = lcd.buttonPressed(Button.LEFT);
+            boolean upPressed = lcd.buttonPressed(Button.UP);
+            boolean downPressed = lcd.buttonPressed(Button.DOWN);
+            boolean selectPressed = lcd.buttonPressed(Button.SELECT);
             if (rightPressed) {
                 lcd.clear();
                 lcd.message("right");

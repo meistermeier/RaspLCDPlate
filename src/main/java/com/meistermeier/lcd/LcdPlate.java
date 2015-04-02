@@ -5,17 +5,9 @@ import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LcdPlate {
-
-    // Port expander input pin definitions
-    public static final int BUTTON_SELECT = 0;
-    public static final int BUTTON_RIGHT = 1;
-    public static final int BUTTON_DOWN = 2;
-    public static final int BUTTON_UP = 3;
-    public static final int BUTTON_LEFT = 4;
 
     // Port expander registers
     private static final int MCP23017_IOCON_BANK0 = 0x0A;// IOCON when Bank 0 active
@@ -478,6 +470,7 @@ public class LcdPlate {
 
     /**
      * Set background color
+     *
      * @param color
      * @throws Exception
      */
@@ -490,13 +483,23 @@ public class LcdPlate {
         lcdDevice.write(MCP23017_GPIOB, (byte) portB);
     }
 
+    public boolean buttonPressed(Button button) {
+        try {
+            return buttonPressed(button.getMappedCode()) == 1;
+        } catch (IOException e) {
+            // todo proper log message needed
+            return false;
+        }
+    }
+
     // Read state of single button
-    public int buttonPressed(int b) throws Exception {
+    private int buttonPressed(int b) throws IOException {
         return lcdDevice.read(MCP23017_GPIOA) >> b & 1;
     }
 
     // Read and return bitmask of combined button state
-    public int buttons() throws Exception {
+    // later needed for a function returning button collection
+    private int buttons() throws IOException {
         return lcdDevice.read(MCP23017_GPIOA) & 0b11111;
     }
 
